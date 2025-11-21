@@ -1,36 +1,188 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gerenciador de Tarefas - Next.js 15 com Testes Unitários
 
-## Getting Started
+Aplicação de gerenciamento de tarefas desenvolvida com Next.js 15, TypeScript e testes unitários usando Jest e Testing Library.
 
-First, run the development server:
+## 🚀 Funcionalidades
+
+- ✅ **Listagem de Tarefas**: Exibe tarefas vindas de um arquivo simulado (API mock)
+- ✅ **Adicionar Tarefas**: Formulário controlado para adicionar novas tarefas
+- ✅ **Contador de Tarefas**: Hook personalizado para contar tarefas totais, completas e pendentes
+- ✅ **Server Components**: Carregamento de dados no servidor
+- ✅ **Client Components**: Interatividade no cliente
+- ✅ **Testes Unitários**: Cobertura completa dos principais componentes
+
+## 📁 Estrutura do Projeto
+
+```
+tarefas-app/
+├── app/
+│   └── page.tsx                 # Server Component principal
+├── components/
+│   ├── NovaTarefa.tsx          # Client Component - Formulário
+│   ├── ListaTarefas.tsx        # Client Component - Lista
+│   ├── ContadorTarefas.tsx     # Client Component - Estatísticas
+│   └── GerenciadorTarefas.tsx  # Client Component - Orquestrador
+├── hooks/
+│   └── useContadorDeTarefas.ts # Hook personalizado
+├── lib/
+│   ├── types.ts                # Tipos TypeScript
+│   └── tarefas.ts              # API simulada
+└── __tests__/
+    ├── NovaTarefa.test.tsx
+    ├── ListaTarefas.test.tsx
+    ├── GerenciadorTarefas.test.tsx
+    └── useContadorDeTarefas.test.ts
+```
+
+## 🛠️ Tecnologias
+
+- **Next.js 15** - Framework React com App Router
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Estilização
+- **Jest** - Framework de testes
+- **Testing Library** - Testes de componentes React
+- **React 19** - Biblioteca de UI
+
+## 📦 Instalação
+
+As dependências já foram instaladas durante a criação do projeto.
+
+## 🏃 Como Executar
+
+### Desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build de Produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+### Executar Testes
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Executar todos os testes
+npm test -- --maxWorkers=2
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Executar testes em modo watch
+npm run test:watch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Executar testes com cobertura
+npm run test:coverage
+```
 
-## Deploy on Vercel
+## 🧪 Testes Implementados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. Hook `useContadorDeTarefas`
+- ✅ Retorna contador correto para lista de tarefas
+- ✅ Retorna zeros quando a lista está vazia
+- ✅ Recalcula quando as tarefas mudam
+- ✅ Conta corretamente quando todas as tarefas estão completas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Componente `NovaTarefa`
+- ✅ Renderiza o formulário corretamente
+- ✅ Permite digitar no campo de input
+- ✅ Exibe erro quando título está vazio
+- ✅ Exibe erro quando título tem menos de 3 caracteres
+- ✅ Chama callback ao submeter com dados válidos
+- ✅ Limpa o input após submissão
+- ✅ Remove espaços do título (trim)
+- ✅ Remove mensagem de erro ao digitar novamente
+- ✅ Possui atributos de acessibilidade corretos
+- ✅ Atualiza aria-invalid quando há erro
+
+### 3. Componente `ListaTarefas`
+- ✅ Renderiza todas as tarefas da lista
+- ✅ Exibe mensagem quando não há tarefas
+- ✅ Renderiza o título da lista
+- ✅ Exibe a data de criação de cada tarefa
+- ✅ Exibe o status correto (Completa/Pendente)
+- ✅ Renderiza o número correto de itens
+- ✅ Aplica estilo de riscado em tarefas completas
+- ✅ Não aplica riscado em tarefas pendentes
+
+### 4. Componente `GerenciadorTarefas`
+- ✅ Renderiza a lista de tarefas iniciais
+- ✅ Renderiza o contador de tarefas
+- ✅ Renderiza o formulário de nova tarefa
+- ✅ Adiciona nova tarefa quando o formulário é submetido
+- ✅ Atualiza o contador ao adicionar nova tarefa
+- ✅ Exibe mensagem quando não há tarefas
+- ✅ Exibe estatísticas zeradas quando não há tarefas
+- ✅ Adiciona nova tarefa no topo da lista
+- ✅ Exibe a data de criação das tarefas
+- ✅ Exibe o status correto das tarefas
+
+## 🎯 Conceitos Aplicados
+
+### App Router (Next.js 15)
+- Server Components para carregamento de dados
+- Client Components para interatividade
+- Separação clara entre lógica de servidor e cliente
+
+### Testes Unitários
+- **renderHook**: Teste isolado de hooks personalizados
+- **render**: Renderização de componentes
+- **screen**: Queries para encontrar elementos
+- **fireEvent/userEvent**: Simulação de interações
+- **waitFor**: Espera por mudanças assíncronas
+
+### Boas Práticas
+- Componentes reutilizáveis
+- Tipagem forte com TypeScript
+- Formulários controlados
+- Validação de entrada
+- Acessibilidade (ARIA)
+- Separação de responsabilidades
+
+## 📊 Cobertura de Testes
+
+Execute `npm run test:coverage` para ver o relatório de cobertura completo.
+
+## 🎨 Interface
+
+A aplicação possui:
+- Design moderno com Tailwind CSS
+- Gradiente de fundo azul
+- Cards com sombras e bordas arredondadas
+- Estatísticas coloridas (azul, verde, amarelo)
+- Formulário validado com mensagens de erro
+- Lista de tarefas com status visual
+- Responsivo e acessível
+
+## 📝 Notas de Implementação
+
+### Simulação de API
+Os dados são simulados localmente usando `Promise.resolve()`, imitando uma chamada de API real.
+
+### Hook Personalizado
+O `useContadorDeTarefas` demonstra como criar e testar hooks personalizados de forma isolada.
+
+### Validação
+O formulário valida:
+- Campo não pode estar vazio
+- Mínimo de 3 caracteres
+- Remove espaços em branco (trim)
+
+### Testes
+Os testes cobrem:
+- Renderização de elementos
+- Interação do usuário
+- Validação de formulários
+- Atualização de estado
+- Hooks personalizados
+- Acessibilidade
+
+## 🤝 Contribuindo
+
+Este é um projeto educacional demonstrando conceitos de testes unitários em Next.js 15.
+
+## 📄 Licença
+
+MIT
