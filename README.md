@@ -179,6 +179,46 @@ Os testes cobrem:
 - Hooks personalizados
 - Acessibilidade
 
+### Resumo das Mudanças
+
+Atualização de .github/workflows/main.yml
+O pipeline CI/CD agora inclui:
+
+Instalar dependências (npm ci)
+
+Lint (npm run lint)
+
+Testar (npm run test)
+
+Construir (npm run build)
+
+Deploy para o Vercel (acionado automaticamente após push para a branch principal, utilizando o segredo VERCEL_TOKEN)
+
+O comando de deploy no Vercel foi aprimorado com:
+
+Separação da instalação do CLI em uma etapa própria para maior clareza
+
+Uso da flag --yes no lugar das flags descontinuadas --confirm e --scope
+
+Atualização de README.md
+Adicionadas novas seções:
+
+🌐 Site Publicado: Link direto para a aplicação implantada em https://tarefas-app.vercel.app
+
+🔄 Pipeline CI/CD: Documentação completa, incluindo:
+
+Descrição das etapas do pipeline
+
+Instruções passo a passo para criação do segredo VERCEL_TOKEN
+
+Documentação sobre os gatilhos do pipeline (push para a branch principal vs. pull requests)
+
+Segurança & Revisão de Código
+
+✅ Revisão de código aprovada sem comentários
+
+✅ Análise de segurança CodeQL encontrou 0 alertas
+
 ## 🤝 Contribuindo
 
 Este é um projeto educacional demonstrando conceitos de testes unitários em Next.js 15.
