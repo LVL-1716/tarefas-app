@@ -1,4 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ListaTarefas from '@/components/ListaTarefas';
 import { Tarefa } from '@/lib/types';
@@ -89,5 +91,163 @@ describe('ListaTarefas', () => {
 
     expect(mockAlternar).toHaveBeenCalledWith(1);
     expect(mockAlternar).toHaveBeenCalledTimes(1);
+  });
+
+  it('deve renderizar botões de editar e deletar', () => {
+    render(<ListaTarefas tarefas={tarefasMock} onEditar={jest.fn()} onDeletar={jest.fn()} />);
+
+    const botõesEditar = screen.getAllByLabelText('Editar tarefa');
+    const botõesDeletar = screen.getAllByLabelText('Deletar tarefa');
+
+    expect(botõesEditar).toHaveLength(2);
+    expect(botõesDeletar).toHaveLength(2);
+  });
+
+  it('deve ativar modo de edição ao clicar no botão editar', async () => {
+    const user = userEvent.setup();
+    render(<ListaTarefas tarefas={tarefasMock} onEditar={jest.fn()} onDeletar={jest.fn()} />);
+
+    const botãoEditar = screen.getAllByLabelText('Editar tarefa')[0];
+    await user.click(botãoEditar);
+
+    const inputEdicao = screen.getByDisplayValue('Tarefa Pendente');
+    expect(inputEdicao).toBeInTheDocument();
+  });
+
+  it('deve chamar onEditar com ID e novo título ao confirmar edição', async () => {
+    const user = userEvent.setup();
+    const mockEditar = jest.fn();
+    render(<ListaTarefas tarefas={tarefasMock} onEditar={mockEditar} onDeletar={jest.fn()} />);
+
+    const botãoEditar = screen.getAllByLabelText('Editar tarefa')[0];
+    await user.click(botãoEditar);
+
+    const inputEdicao = screen.getByDisplayValue('Tarefa Pendente');
+    await user.clear(inputEdicao);
+    await user.type(inputEdicao, 'Tarefa Editada');
+
+    const botãoConfirmar = screen.getByLabelText('Confirmar edição');
+    await user.click(botãoConfirmar);
+
+    expect(mockEditar).toHaveBeenCalledWith(1, 'Tarefa Editada');
+  });
+
+  it('não deve permitir edição com título vazio', async () => {
+    const user = userEvent.setup();
+    const mockEditar = jest.fn();
+    render(<ListaTarefas tarefas={tarefasMock} onEditar={mockEditar} onDeletar={jest.fn()} />);
+
+    const botãoEditar = screen.getAllByLabelText('Editar tarefa')[0];
+    await user.click(botãoEditar);
+
+    const inputEdicao = screen.getByDisplayValue('Tarefa Pendente');
+    await user.clear(inputEdicao);
+
+    const botãoConfirmar = screen.getByLabelText('Confirmar edição');
+    await user.click(botãoConfirmar);
+
+    expect(mockEditar).not.toHaveBeenCalled();
+  });
+
+  it('deve cancelar edição ao clicar em cancelar', async () => {
+    const user = userEvent.setup();
+    const mockEditar = jest.fn();
+    render(<ListaTarefas tarefas={tarefasMock} onEditar={mockEditar} onDeletar={jest.fn()} />);
+
+    const botãoEditar = screen.getAllByLabelText('Editar tarefa')[0];
+    await user.click(botãoEditar);
+
+    const botãoCancelar = screen.getByLabelText('Cancelar edição');
+    await user.click(botãoCancelar);
+
+    expect(screen.queryByDisplayValue('Tarefa Pendente')).not.toBeInTheDocument();
+    expect(mockEditar).not.toHaveBeenCalled();
+  });
+
+  it('deve chamar onDeletar com ID ao clicar em deletar', async () => {
+    const user = userEvent.setup();
+    const mockDeletar = jest.fn();
+    render(<ListaTarefas tarefas={tarefasMock} onEditar={jest.fn()} onDeletar={mockDeletar} />);
+
+    const botãoDeletar = screen.getAllByLabelText('Deletar tarefa')[0];
+    await user.click(botãoDeletar);
+
+    expect(mockDeletar).toHaveBeenCalledWith(1);
+  });
+
+  it('deve renderizar ícone de drag indicator', () => {
+    render(<ListaTarefas tarefas={tarefasMock} onEditar={jest.fn()} onDeletar={jest.fn()} />);
+
+    const dragIndicators = screen.getAllByText('⋮⋮');
+    expect(dragIndicators).toHaveLength(2);
+  });
+
+  it('deve permitir dragging de tarefas', async () => {
+    const mockReordenar = jest.fn();
+    const { container } = render(
+      <ListaTarefas 
+        tarefas={tarefasMock} 
+        onEditar={jest.fn()} 
+        onDeletar={jest.fn()}
+        onReordenar={mockReordenar}
+      />
+    );
+
+    const items = container.querySelectorAll('li');
+    expect(items).toHaveLength(2);
+    expect(items[0]).toHaveAttribute('draggable', 'true');
+  });
+
+  it('deve chamar onReordenar após drop', async () => {
+    const mockReordenar = jest.fn();
+    const { container } = render(
+      <ListaTarefas 
+        tarefas={tarefasMock} 
+        onEditar={jest.fn()} 
+        onDeletar={jest.fn()}
+        onReordenar={mockReordenar}
+      />
+    );
+
+    const items = container.querySelectorAll('li');
+    const firstItem = items[0];
+    const secondItem = items[1];
+
+    // Simular drag start
+    fireEvent.dragStart(firstItem, {
+      dataTransfer: { effectAllowed: 'move' },
+    });
+
+    // Simular drag over
+    fireEvent.dragOver(secondItem);
+
+    // Simular drop
+    fireEvent.drop(secondItem);
+
+    // Simular drag end
+    fireEvent.dragEnd(firstItem);
+
+    // onReordenar deve ter sido chamado
+    expect(mockReordenar).toHaveBeenCalled();
+  });
+
+  it('deve aplicar classe de opacity ao tarefa em drag', async () => {
+    const { container } = render(
+      <ListaTarefas 
+        tarefas={tarefasMock} 
+        onEditar={jest.fn()} 
+        onDeletar={jest.fn()}
+        onReordenar={jest.fn()}
+      />
+    );
+
+    const firstItem = container.querySelector('li');
+    
+    fireEvent.dragStart(firstItem!);
+    
+    // Após dragStart, a classe opacity-50 deve estar presente
+    await waitFor(() => {
+      expect(firstItem).toHaveClass('opacity-50');
+    });
   });
 });
