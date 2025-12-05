@@ -43,6 +43,41 @@ tarefas-app/
 - **Testing Library** - Testes de componentes React
 - **React 19** - Biblioteca de UI
 
+## 🌐 Site Publicado
+
+Acesse a aplicação em produção: [https://tarefas-app.vercel.app](https://tarefas-app.vercel.app)
+
+## 🔄 CI/CD Pipeline
+
+Este projeto utiliza GitHub Actions para integração contínua e deploy automatizado.
+
+### Pipeline de CI/CD
+
+O arquivo `.github/workflows/main.yml` configura a seguinte pipeline:
+
+1. **Instalação de dependências** (`npm ci`)
+2. **Linting** (`npm run lint`)
+3. **Testes** (`npm run test`)
+4. **Build** (`npm run build`)
+5. **Deploy para Vercel** (automático após push na branch `main`)
+
+### Configuração do Secret VERCEL_TOKEN
+
+Para habilitar o deploy automatizado para Vercel, é necessário configurar o secret `VERCEL_TOKEN`:
+
+1. Acesse [Vercel Account Settings](https://vercel.com/account/tokens)
+2. Crie um novo token com nome descritivo (ex: `github-actions`)
+3. No repositório GitHub, vá em **Settings > Secrets and variables > Actions**
+4. Clique em **New repository secret**
+5. Nome: `VERCEL_TOKEN`
+6. Valor: cole o token gerado na Vercel
+7. Clique em **Add secret**
+
+### Triggers
+
+- **Push na branch `main`**: Executa CI completo + Deploy para Vercel
+- **Pull Request para `main`**: Executa apenas CI (lint, test, build)
+
 ## 📦 Instalação
 
 As dependências já foram instaladas durante a criação do projeto.
