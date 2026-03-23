@@ -8,6 +8,7 @@ import NovaTarefa from '@/components/NovaTarefa';
 import ListaTarefas from '@/components/ListaTarefas';
 import ContadorTarefas from '@/components/ContadorTarefas';
 import FiltroTarefas from '@/components/FiltroTarefas';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 interface GerenciadorTarefasProps {
   tarefasIniciais: Tarefa[];
@@ -89,7 +90,10 @@ export default function GerenciadorTarefas({ tarefasIniciais }: GerenciadorTaref
 
   return (
     <div className="space-y-6">
-      <ContadorTarefas tarefas={tarefas} />
+      <div className="flex justify-between items-center">
+        <ContadorTarefas tarefas={tarefas} />
+        <WhatsAppButton tarefas={tarefas} />
+      </div>
       <FiltroTarefas filtroAtivo={filtro} onFiltroMudar={setFiltro} />
       <NovaTarefa onAdicionar={handleAdicionarTarefa} />
       <ListaTarefas 

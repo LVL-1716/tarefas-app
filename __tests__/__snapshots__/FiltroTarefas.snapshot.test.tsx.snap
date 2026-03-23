@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`FiltroTarefas - Snapshots deve renderizar snapshot com filtro "completas" ativo 1`] = `
+<div
+  class="bg-white p-6 rounded-lg shadow-md animate-slide-down"
+>
+  <h3
+    class="text-lg font-semibold text-gray-800 mb-4"
+  >
+    Filtrar Tarefas
+  </h3>
+  <div
+    class="flex gap-3 flex-wrap"
+  >
+    <button
+      aria-pressed="false"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-gray-200 text-gray-800 hover:bg-gray-300"
+      data-testid="filtro-todas"
+    >
+      Todas
+    </button>
+    <button
+      aria-pressed="true"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-blue-600 text-white shadow-md scale-105"
+      data-testid="filtro-completas"
+    >
+      Completas
+    </button>
+    <button
+      aria-pressed="false"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-gray-200 text-gray-800 hover:bg-gray-300"
+      data-testid="filtro-pendentes"
+    >
+      Pendentes
+    </button>
+  </div>
+</div>
+`;
+
+exports[`FiltroTarefas - Snapshots deve renderizar snapshot com filtro "pendentes" ativo 1`] = `
+<div
+  class="bg-white p-6 rounded-lg shadow-md animate-slide-down"
+>
+  <h3
+    class="text-lg font-semibold text-gray-800 mb-4"
+  >
+    Filtrar Tarefas
+  </h3>
+  <div
+    class="flex gap-3 flex-wrap"
+  >
+    <button
+      aria-pressed="false"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-gray-200 text-gray-800 hover:bg-gray-300"
+      data-testid="filtro-todas"
+    >
+      Todas
+    </button>
+    <button
+      aria-pressed="false"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-gray-200 text-gray-800 hover:bg-gray-300"
+      data-testid="filtro-completas"
+    >
+      Completas
+    </button>
+    <button
+      aria-pressed="true"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-blue-600 text-white shadow-md scale-105"
+      data-testid="filtro-pendentes"
+    >
+      Pendentes
+    </button>
+  </div>
+</div>
+`;
+
+exports[`FiltroTarefas - Snapshots deve renderizar snapshot com filtro "todas" ativo 1`] = `
+<div
+  class="bg-white p-6 rounded-lg shadow-md animate-slide-down"
+>
+  <h3
+    class="text-lg font-semibold text-gray-800 mb-4"
+  >
+    Filtrar Tarefas
+  </h3>
+  <div
+    class="flex gap-3 flex-wrap"
+  >
+    <button
+      aria-pressed="true"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-blue-600 text-white shadow-md scale-105"
+      data-testid="filtro-todas"
+    >
+      Todas
+    </button>
+    <button
+      aria-pressed="false"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-gray-200 text-gray-800 hover:bg-gray-300"
+      data-testid="filtro-completas"
+    >
+      Completas
+    </button>
+    <button
+      aria-pressed="false"
+      class="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-gray-200 text-gray-800 hover:bg-gray-300"
+      data-testid="filtro-pendentes"
+    >
+      Pendentes
+    </button>
+  </div>
+</div>
+`;
