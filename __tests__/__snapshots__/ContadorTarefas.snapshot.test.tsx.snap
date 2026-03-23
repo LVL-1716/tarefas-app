@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ContadorTarefas - Snapshots deve renderizar snapshot com apenas tarefas completas 1`] = `
+<div
+  class="bg-white p-6 rounded-lg shadow-md mb-6 animate-slide-down"
+>
+  <h2
+    class="text-xl font-semibold mb-4 text-gray-800"
+  >
+    Estatísticas
+  </h2>
+  <div
+    class="grid grid-cols-3 gap-4"
+  >
+    <div
+      class="text-center p-4 bg-blue-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-blue-600 transition-all"
+        data-testid="total-tarefas"
+      >
+        2
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Total
+      </p>
+    </div>
+    <div
+      class="text-center p-4 bg-green-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-green-600 transition-all"
+        data-testid="tarefas-completas"
+      >
+        2
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Completas
+      </p>
+    </div>
+    <div
+      class="text-center p-4 bg-yellow-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-yellow-600 transition-all"
+        data-testid="tarefas-pendentes"
+      >
+        0
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Pendentes
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ContadorTarefas - Snapshots deve renderizar snapshot com tarefas 1`] = `
+<div
+  class="bg-white p-6 rounded-lg shadow-md mb-6 animate-slide-down"
+>
+  <h2
+    class="text-xl font-semibold mb-4 text-gray-800"
+  >
+    Estatísticas
+  </h2>
+  <div
+    class="grid grid-cols-3 gap-4"
+  >
+    <div
+      class="text-center p-4 bg-blue-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-blue-600 transition-all"
+        data-testid="total-tarefas"
+      >
+        2
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Total
+      </p>
+    </div>
+    <div
+      class="text-center p-4 bg-green-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-green-600 transition-all"
+        data-testid="tarefas-completas"
+      >
+        1
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Completas
+      </p>
+    </div>
+    <div
+      class="text-center p-4 bg-yellow-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-yellow-600 transition-all"
+        data-testid="tarefas-pendentes"
+      >
+        1
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Pendentes
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ContadorTarefas - Snapshots deve renderizar snapshot sem tarefas 1`] = `
+<div
+  class="bg-white p-6 rounded-lg shadow-md mb-6 animate-slide-down"
+>
+  <h2
+    class="text-xl font-semibold mb-4 text-gray-800"
+  >
+    Estatísticas
+  </h2>
+  <div
+    class="grid grid-cols-3 gap-4"
+  >
+    <div
+      class="text-center p-4 bg-blue-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-blue-600 transition-all"
+        data-testid="total-tarefas"
+      >
+        0
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Total
+      </p>
+    </div>
+    <div
+      class="text-center p-4 bg-green-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-green-600 transition-all"
+        data-testid="tarefas-completas"
+      >
+        0
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Completas
+      </p>
+    </div>
+    <div
+      class="text-center p-4 bg-yellow-50 rounded-lg transition-transform hover:scale-105"
+    >
+      <p
+        class="text-3xl font-bold text-yellow-600 transition-all"
+        data-testid="tarefas-pendentes"
+      >
+        0
+      </p>
+      <p
+        class="text-sm text-gray-600 mt-1"
+      >
+        Pendentes
+      </p>
+    </div>
+  </div>
+</div>
+`;

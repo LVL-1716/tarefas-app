@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ListaTarefas - Snapshots deve renderizar snapshot com botões de editar e deletar 1`] = `
+<div
+  class="bg-white rounded-lg shadow-md overflow-hidden"
+>
+  <div
+    class="px-6 py-4 bg-gray-50 border-b border-gray-200"
+  >
+    <h2
+      class="text-xl font-semibold text-gray-800"
+    >
+      Lista de Tarefas
+    </h2>
+  </div>
+  <ul
+    class="divide-y divide-gray-200"
+  >
+    <li
+      class="px-6 py-4 transition-all animate-fade-in-scale cursor-move hover:bg-gray-50 dark:hover:bg-gray-700"
+      draggable="true"
+    >
+      <div
+        class="flex items-center justify-between gap-4"
+      >
+        <div
+          class="flex items-center gap-4 flex-1"
+        >
+          <span
+            class="text-gray-400 dark:text-gray-600 cursor-grab active:cursor-grabbing text-lg"
+          >
+            ⋮⋮
+          </span>
+          <button
+            aria-label="Marcar como completa"
+            class="shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-all hover:scale-110"
+            style="border-color: rgb(209, 213, 219); background-color: transparent;"
+          />
+          <div
+            class="flex-1"
+          >
+            <h3
+              class="text-base font-medium transition-all text-gray-900"
+            >
+              Tarefa Pendente
+            </h3>
+            <p
+              class="text-sm text-gray-500 mt-1"
+            >
+              Criada em: 
+              19/11/2024
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-2"
+        >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium transition-colors bg-yellow-100 text-yellow-800"
+          >
+            Pendente
+          </span>
+          <button
+            aria-label="Editar tarefa"
+            class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm transition-colors"
+          >
+            ✎
+          </button>
+          <button
+            aria-label="Deletar tarefa"
+            class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-sm transition-colors"
+          >
+            🗑
+          </button>
+        </div>
+      </div>
+    </li>
+    <li
+      class="px-6 py-4 transition-all animate-fade-in-scale cursor-move hover:bg-gray-50 dark:hover:bg-gray-700"
+      draggable="true"
+    >
+      <div
+        class="flex items-center justify-between gap-4"
+      >
+        <div
+          class="flex items-center gap-4 flex-1"
+        >
+          <span
+            class="text-gray-400 dark:text-gray-600 cursor-grab active:cursor-grabbing text-lg"
+          >
+            ⋮⋮
+          </span>
+          <button
+            aria-label="Marcar como pendente"
+            class="shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-all hover:scale-110"
+            style="border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129);"
+          >
+            <svg
+              class="w-4 h-4 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </button>
+          <div
+            class="flex-1"
+          >
+            <h3
+              class="text-base font-medium transition-all text-gray-500 line-through"
+            >
+              Tarefa Completa
+            </h3>
+            <p
+              class="text-sm text-gray-500 mt-1"
+            >
+              Criada em: 
+              18/11/2024
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-2"
+        >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium transition-colors bg-green-100 text-green-800"
+          >
+            Completa
+          </span>
+          <button
+            aria-label="Editar tarefa"
+            class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm transition-colors"
+          >
+            ✎
+          </button>
+          <button
+            aria-label="Deletar tarefa"
+            class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-sm transition-colors"
+          >
+            🗑
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ListaTarefas - Snapshots deve renderizar snapshot de lista com tarefas 1`] = `
+<div
+  class="bg-white rounded-lg shadow-md overflow-hidden"
+>
+  <div
+    class="px-6 py-4 bg-gray-50 border-b border-gray-200"
+  >
+    <h2
+      class="text-xl font-semibold text-gray-800"
+    >
+      Lista de Tarefas
+    </h2>
+  </div>
+  <ul
+    class="divide-y divide-gray-200"
+  >
+    <li
+      class="px-6 py-4 transition-all animate-fade-in-scale cursor-move hover:bg-gray-50 dark:hover:bg-gray-700"
+      draggable="true"
+    >
+      <div
+        class="flex items-center justify-between gap-4"
+      >
+        <div
+          class="flex items-center gap-4 flex-1"
+        >
+          <span
+            class="text-gray-400 dark:text-gray-600 cursor-grab active:cursor-grabbing text-lg"
+          >
+            ⋮⋮
+          </span>
+          <button
+            aria-label="Marcar como completa"
+            class="shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-all hover:scale-110"
+            style="border-color: rgb(209, 213, 219); background-color: transparent;"
+          />
+          <div
+            class="flex-1"
+          >
+            <h3
+              class="text-base font-medium transition-all text-gray-900"
+            >
+              Tarefa Pendente
+            </h3>
+            <p
+              class="text-sm text-gray-500 mt-1"
+            >
+              Criada em: 
+              19/11/2024
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-2"
+        >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium transition-colors bg-yellow-100 text-yellow-800"
+          >
+            Pendente
+          </span>
+          <button
+            aria-label="Editar tarefa"
+            class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm transition-colors"
+          >
+            ✎
+          </button>
+          <button
+            aria-label="Deletar tarefa"
+            class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-sm transition-colors"
+          >
+            🗑
+          </button>
+        </div>
+      </div>
+    </li>
+    <li
+      class="px-6 py-4 transition-all animate-fade-in-scale cursor-move hover:bg-gray-50 dark:hover:bg-gray-700"
+      draggable="true"
+    >
+      <div
+        class="flex items-center justify-between gap-4"
+      >
+        <div
+          class="flex items-center gap-4 flex-1"
+        >
+          <span
+            class="text-gray-400 dark:text-gray-600 cursor-grab active:cursor-grabbing text-lg"
+          >
+            ⋮⋮
+          </span>
+          <button
+            aria-label="Marcar como pendente"
+            class="shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-all hover:scale-110"
+            style="border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129);"
+          >
+            <svg
+              class="w-4 h-4 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </button>
+          <div
+            class="flex-1"
+          >
+            <h3
+              class="text-base font-medium transition-all text-gray-500 line-through"
+            >
+              Tarefa Completa
+            </h3>
+            <p
+              class="text-sm text-gray-500 mt-1"
+            >
+              Criada em: 
+              18/11/2024
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-2"
+        >
+          <span
+            class="px-3 py-1 rounded-full text-xs font-medium transition-colors bg-green-100 text-green-800"
+          >
+            Completa
+          </span>
+          <button
+            aria-label="Editar tarefa"
+            class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm transition-colors"
+          >
+            ✎
+          </button>
+          <button
+            aria-label="Deletar tarefa"
+            class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-sm transition-colors"
+          >
+            🗑
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ListaTarefas - Snapshots deve renderizar snapshot de lista vazia 1`] = `
+<div
+  class="bg-white p-6 rounded-lg shadow-md text-center"
+>
+  <p
+    class="text-gray-500"
+  >
+    Nenhuma tarefa encontrada.
+  </p>
+</div>
+`;
