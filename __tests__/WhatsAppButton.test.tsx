@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { render, screen, fireEvent } from '@testing-library/react';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { ToastProvider } from '@/contexts/ToastContext';
@@ -86,14 +85,5 @@ describe('WhatsAppButton', () => {
       expect.stringContaining('Nenhuma%20tarefa%20ainda'),
       '_blank'
     );
-=======
-import { render } from '@testing-library/react';
-import WhatsAppButton from './WhatsAppButton';
-
-describe('WhatsAppButton', () => {
-  it('renders correctly', () => {
-    const { container } = render(<WhatsAppButton phoneNumber="5511999999999" />);
-    expect(container.firstChild).toMatchSnapshot();
->>>>>>> 4e0d189e030f13bb6e2456ceb05568da62853b54
   });
 });
