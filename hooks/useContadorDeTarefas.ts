@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Tarefa } from '@/lib/types';
 
 /**
@@ -9,23 +8,13 @@ import { Tarefa } from '@/lib/types';
  * @returns Objeto contendo total, completas e pendentes
  */
 export function useContadorDeTarefas(tarefas: Tarefa[]) {
-  const [contador, setContador] = useState({
-    total: 0,
-    completas: 0,
-    pendentes: 0,
-  });
+  const total = tarefas.length;
+  const completas = tarefas.filter((tarefa) => tarefa.completa).length;
+  const pendentes = total - completas;
 
-  useEffect(() => {
-    const total = tarefas.length;
-    const completas = tarefas.filter((tarefa) => tarefa.completa).length;
-    const pendentes = total - completas;
-
-    setContador({
-      total,
-      completas,
-      pendentes,
-    });
-  }, [tarefas]);
-
-  return contador;
+  return {
+    total,
+    completas,
+    pendentes,
+  };
 }

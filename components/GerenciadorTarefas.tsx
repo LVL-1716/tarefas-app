@@ -90,10 +90,6 @@ export default function GerenciadorTarefas({ tarefasIniciais }: GerenciadorTaref
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <ContadorTarefas tarefas={tarefas} />
-        <WhatsAppButton tarefas={tarefas} />
-      </div>
       <FiltroTarefas filtroAtivo={filtro} onFiltroMudar={setFiltro} />
       <NovaTarefa onAdicionar={handleAdicionarTarefa} />
       <ListaTarefas 
@@ -103,6 +99,8 @@ export default function GerenciadorTarefas({ tarefasIniciais }: GerenciadorTaref
         onDeletar={handleDeletar}
         onReordenar={handleReordenar}
       />
+      <ContadorTarefas tarefas={tarefas} />
+      <WhatsAppButton tarefas={tarefas} />
     </div>
   );
 }

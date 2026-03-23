@@ -45,7 +45,7 @@ export default function WhatsAppButton({ tarefas }: WhatsAppButtonProps) {
     <>
       <button
         onClick={() => setIsModalOpen(true)}
-        className="flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
+        className="fixed bottom-4 right-4 z-50 flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-colors"
         title="Compartilhar tarefas via WhatsApp"
       >
         <MessageCircle size={20} />
