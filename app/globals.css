@@ -25,88 +25,103 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Dark Mode */
+/* Dark Mode - Forçado com !important para garantir aplicação */
 .dark {
   color-scheme: dark;
 }
 
 .dark body {
-  @apply bg-gray-900 text-gray-100;
+  background: #111827 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark main {
+  background: linear-gradient(to bottom right, #030712, #111827) !important;
+}
+
+.dark h1 {
+  color: #f3f4f6 !important;
+}
+
+.dark p {
+  color: #9ca3af !important;
 }
 
 .dark input,
 .dark textarea,
 .dark select {
-  @apply bg-gray-800 text-gray-100 border-gray-700;
+  background: #1f2937 !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
 }
 
 .dark input::placeholder,
 .dark textarea::placeholder {
-  @apply text-gray-500;
+  color: #9ca3af !important;
 }
 
 .dark .bg-white {
-  @apply bg-gray-800;
+  background: #1f2937 !important;
 }
 
 .dark .bg-gray-50 {
-  @apply bg-gray-700;
+  background: #374151 !important;
 }
 
 .dark .bg-gray-100 {
-  @apply bg-gray-700;
+  background: #374151 !important;
 }
 
 .dark .bg-gray-200 {
-  @apply bg-gray-600;
+  background: #4b5563 !important;
 }
 
 .dark .bg-blue-50 {
-  @apply bg-gray-700;
+  background: #374151 !important;
 }
 
 .dark .bg-green-50 {
-  @apply bg-gray-700;
+  background: #374151 !important;
 }
 
 .dark .bg-yellow-50 {
-  @apply bg-gray-700;
+  background: #374151 !important;
 }
 
 .dark .border-gray-200 {
-  @apply border-gray-700;
+  border-color: #374151 !important;
 }
 
 .dark .border-gray-300 {
-  @apply border-gray-700;
+  border-color: #374151 !important;
 }
 
 .dark .text-gray-500 {
-  @apply text-gray-400;
+  color: #9ca3af !important;
 }
 
 .dark .text-gray-600 {
-  @apply text-gray-400;
+  color: #9ca3af !important;
 }
 
 .dark .text-gray-800 {
-  @apply text-gray-200;
+  color: #e5e7eb !important;
 }
 
 .dark .text-gray-900 {
-  @apply text-gray-100;
+  color: #f3f4f6 !important;
 }
 
 .dark .shadow-md {
-  @apply shadow-lg;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
 }
 
 .dark .hover\:bg-gray-50:hover {
-  @apply bg-gray-700;
+  background: #374151 !important;
 }
 
 .dark .hover\:bg-gray-300:hover {
-  @apply bg-gray-600;
+  background: #4b5563 !important;
 }
 
 /* Animações */
