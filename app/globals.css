@@ -192,3 +192,11 @@ body {
   opacity: 0;
   transform: translateX(-20px);
 }
+
+/* Background com detalhes para o app de tarefas */
+.bg-tarefas-pattern {
+  background-image: 
+    linear-gradient(0deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  background-size: 24px 24px, auto;
+}
